@@ -5,12 +5,8 @@ import cn.mingming.borrowbooks.service.dto.UserDTO;
 import cn.mingming.borrowbooks.service.common.ResponseDto;
 import cn.mingming.borrowbooks.service.api.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * <p>
@@ -27,10 +23,16 @@ public class UserController {
     @Autowired
     private IUserService userService;
 
-    @GetMapping("/queryAllUsers")
-    public ResponseDto queryAllUsers(){
-        List<UserDTO> userVOS = userService.queryAllUsers();
-        return ResponseDto.instance(userVOS);
+    @PostMapping("/register")
+    public ResponseDto register(@RequestBody UserDTO userDTO){
+        String errors = userService.register(userDTO);
+        return ResponseDto.instance(errors);
+    }
+
+    @PostMapping("/login")
+    public ResponseDto login(@RequestBody UserDTO userDTO){
+        String errors = userService.login(userDTO);
+        return ResponseDto.instance(errors);
     }
 }
 

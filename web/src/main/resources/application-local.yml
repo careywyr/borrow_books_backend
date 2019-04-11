@@ -1,0 +1,13 @@
+server:
+  port: 8000
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/borrow_books?useUnicode=true&characterEncoding=UTF8
+    username: root
+    password: root10086
+  redis:
+      database: 0
+      host: localhost
+      password:
+      port: 6379

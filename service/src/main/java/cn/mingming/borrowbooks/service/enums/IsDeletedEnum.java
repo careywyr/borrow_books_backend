@@ -9,18 +9,18 @@ public enum IsDeletedEnum {
     /**
      *
      */
-    UNDELETE("0", "正常"),
-    DELETE("1", "删除");
+    UNDELETE(0, "正常"),
+    DELETE(1, "删除");
 
-    private String id;
+    private Integer id;
     private String name;
 
-    private IsDeletedEnum(String id, String name) {
+    private IsDeletedEnum(Integer id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public String getId() {
+    public Integer getId() {
         return this.id;
     }
 
@@ -28,7 +28,7 @@ public enum IsDeletedEnum {
         return this.name;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

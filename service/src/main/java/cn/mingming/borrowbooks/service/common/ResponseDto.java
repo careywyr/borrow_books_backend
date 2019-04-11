@@ -35,4 +35,7 @@ public class ResponseDto {
     public static ResponseDto instance(Object data){
         return new ResponseDto(data);
     }
+    public static ResponseDto instanceFalse(Object data, String errMsg){
+        return new ResponseDto("9999", errMsg, data);
+    }
 }
